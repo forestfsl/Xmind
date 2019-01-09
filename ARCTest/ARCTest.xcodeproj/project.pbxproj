@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		841227B821D082B500A4D78F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841227B721D082B500A4D78F /* AppDelegate.m */; };
-		841227BB21D082B500A4D78F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841227BA21D082B500A4D78F /* ViewController.m */; };
+		841227BB21D082B500A4D78F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 841227BA21D082B500A4D78F /* ViewController.mm */; };
 		841227BE21D082B500A4D78F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841227BC21D082B500A4D78F /* Main.storyboard */; };
 		841227C021D082B700A4D78F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841227BF21D082B700A4D78F /* Assets.xcassets */; };
 		841227C321D082B700A4D78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841227C121D082B700A4D78F /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		841227B621D082B500A4D78F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		841227B721D082B500A4D78F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		841227B921D082B500A4D78F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		841227BA21D082B500A4D78F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		841227BA21D082B500A4D78F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		841227BD21D082B500A4D78F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		841227BF21D082B700A4D78F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841227C221D082B700A4D78F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,7 +31,8 @@
 		841227ED21D217B900A4D78F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		846B086421D4F2840098437A /* Sark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sark.h; sourceTree = "<group>"; };
 		846B086521D4F2840098437A /* Sark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sark.m; sourceTree = "<group>"; };
-		846B086721D6409F0098437A /* runtimeDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = runtimeDebug.h; sourceTree = "<group>"; };
+		846B086721D6409F0098437A /* runtimeDebug.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = runtimeDebug.h; sourceTree = "<group>"; };
+		847F8ED221D72FF10079B350 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +70,7 @@
 				841227B621D082B500A4D78F /* AppDelegate.h */,
 				841227B721D082B500A4D78F /* AppDelegate.m */,
 				841227B921D082B500A4D78F /* ViewController.h */,
-				841227BA21D082B500A4D78F /* ViewController.m */,
+				841227BA21D082B500A4D78F /* ViewController.mm */,
 				841227BC21D082B500A4D78F /* Main.storyboard */,
 				841227BF21D082B700A4D78F /* Assets.xcassets */,
 				841227C121D082B700A4D78F /* LaunchScreen.storyboard */,
@@ -85,6 +86,7 @@
 		841227EC21D217B900A4D78F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				847F8ED221D72FF10079B350 /* libstdc++.6.tbd */,
 				841227ED21D217B900A4D78F /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
@@ -160,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841227BB21D082B500A4D78F /* ViewController.m in Sources */,
+				841227BB21D082B500A4D78F /* ViewController.mm in Sources */,
 				841227C621D082B700A4D78F /* main.m in Sources */,
 				846B086621D4F2840098437A /* Sark.m in Sources */,
 				841227B821D082B500A4D78F /* AppDelegate.m in Sources */,
@@ -309,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6VWZP43FN;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ARCTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6VWZP43FN;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ARCTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

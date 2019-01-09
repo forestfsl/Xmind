@@ -5,9 +5,11 @@
 //  Created by admin on 2018/12/28.
 //  Copyright © 2018 admin. All rights reserved.
 //
+#import <Foundation/Foundation.h>
 
 #ifndef runtimeDebug_h
 #define runtimeDebug_h
+
 
 # if __arm64__
 #   define ISA_MASK        0x0000000ffffffff8ULL
@@ -57,20 +59,20 @@ struct ivar_t {
     uint32_t alignment_raw;
     uint32_t size;
 };
-//
-//struct ivar_list_t : entsize_list_tt {
-//    ivar_t first;
-//};
-//
+
+struct ivar_list_t : entsize_list_tt {
+    ivar_t first;
+};
+
 struct property_t {
     const char *name;
     const char *attributes;
 };
-//
-//struct property_list_t : entsize_list_tt {
-//    property_t first;
-//};
-//
+
+struct property_list_t : entsize_list_tt {
+    property_t first;
+};
+
 struct chained_property_list {
     struct chained_property_list *next;
     uint32_t count;
@@ -111,36 +113,36 @@ struct class_rw_t {
     char *demangledName;
 };
 //
-//#define FAST_DATA_MASK          0x00007ffffffffff8UL
-//
-//struct class_data_bits_t {
-//    uintptr_t bits;
-//public:
-//    class_rw_t* data() { // 提供data()方法进行 & FAST_DATA_MASK 操作
-//        return (class_rw_t *)(bits & FAST_DATA_MASK);
-//    }
-//};
-//
+#define FAST_DATA_MASK          0x00007ffffffffff8UL
+
+struct class_data_bits_t {
+    uintptr_t bits;
+public:
+    class_rw_t* data() { // 提供data()方法进行 & FAST_DATA_MASK 操作
+        return (class_rw_t *)(bits & FAST_DATA_MASK);
+    }
+};
+
 /* OC对象 */
 struct songlin_objc_object {
     void *isa;
 };
 //
-///* 类对象 */
-//struct songlin_objc_class : songlin_objc_object {
-//    Class superclass;
-//    cache_t cache;
-//    class_data_bits_t bits;
-//public:
-//    class_rw_t* data() {
-//        return bits.data();
-//    }
-//
-//    songlin_objc_class* metaClass() { // 提供metaClass函数，获取元类对象
-//        // 上一篇我们讲解过，isa指针需要经过一次 & ISA_MASK操作之后才得到真正的地址
-//        return (songlin_objc_class *)((long long)isa & ISA_MASK);
-//    }
-//};
+/* 类对象 */
+struct songlin_objc_class : songlin_objc_object {
+    Class superclass;
+    cache_t cache;
+    class_data_bits_t bits;
+public:
+    class_rw_t* data() {
+        return bits.data();
+    }
+
+    songlin_objc_class* metaClass() { // 提供metaClass函数，获取元类对象
+        // 上一篇我们讲解过，isa指针需要经过一次 & ISA_MASK操作之后才得到真正的地址
+        return (songlin_objc_class *)((long long)isa & ISA_MASK);
+    }
+};
 
 
 #endif /* runtimeDebug_h */
