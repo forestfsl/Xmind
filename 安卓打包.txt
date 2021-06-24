@@ -1,0 +1,10 @@
+安卓:
+BASE_PATH=${WORKSPACE}/app/build/outputs/apk/${BUILD_TYPE}
+BASE_URL=${JENKINS_HOME}/job/AILesson_Android/${BUILD_NUMBER}/artifact/app/build/outputs/apk/${BUILD_TYPE}
+python3 ${WORKSPACE}/tools/python/ailesson_qrcode.py ${BASE_URL}/app-${BUILD_TYPE}.apk ${BASE_PATH}/qrcode.png 
+echo DESC_INFO:${BASE_URL}/qrcode.png,${BASE_URL}/app-debug.apk
+
+
+分支：${GIT_BRANCH_TAG}<br>类型：${BUILD_TYPE}<br>请使用内网扫码下载<br><img src='\1' height="200" width="200" /><a href='\2'>点击下载</a>
+
+(ALTapActionBlock) callBack = 0x00000001002f4a58
